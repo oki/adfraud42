@@ -1,9 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  ident: MyString
-
-two:
-  name: MyString
-  ident: MyString
+first:
+  id: 1
+  name: test ad
+  ident: foo42bar
+  targeturl: http://www.google.pl/

@@ -1,19 +1,51 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  event_type: MyString
-  targeturl: MyString
-  ad_ident: MyString
-  uniqueuser: MyString
-  user_agent: MyString
-  ip: MyString
-  ad_gen_time: 2012-06-04 19:47:48
+# typical event
+<% ad_gen_time = (10.seconds.from_now - 10.seconds).to_s(:db) %>
+<% gen_time = 10.seconds.from_now.to_s(:db) %>
+normal:
+  event_type: c
+  ad_ident: foo42bar
+  uniqueuser: AAA_BBB_CCC
+  user_agent: mozillas
+  ip: 127.0.0.1
+  ad_gen_time: <%= ad_gen_time %>
+  created_at: <%= gen_time %>
+  updated_at: <%= gen_time %>
+  
+# data for same ip
+<% gen_time_same_ip = 23.hours.from_now.to_s(:db) %>
+<% ad_gen_time = (23.hours.from_now - 10.seconds).to_s(:db) %>
+<% for x in %w(first second) %>
+<% uu = SecureRandom.hex(10) %>
+same_ip_<%= x %>:
+  event_type: c
+  ad_ident: foo42bar
+  uniqueuser: <%= uu %>
+  user_agent: mozillas
+  ip: 192.166.66.6
+  ad_gen_time: <%= ad_gen_time %>
+  created_at: <%= gen_time_same_ip %>
+  updated_at: <%= gen_time_same_ip %>
+<% end %>
 
-two:
-  event_type: MyString
-  targeturl: MyString
-  ad_ident: MyString
-  uniqueuser: MyString
-  user_agent: MyString
-  ip: MyString
-  ad_gen_time: 2012-06-04 19:47:48
+# data for same uniqueuser
+same_uu_first:
+  event_type: c
+  ad_ident: foo42bar
+  uniqueuser: uu1
+  user_agent: mozillas
+  ip: 192.166.0.1
+  ad_gen_time: <%= (14.hours.from_now. - 10.seconds).to_s(:db) %>
+  created_at: <%= 14.hours.from_now.to_s(:db) %>
+  updated_at: <%= 14.hours.from_now.to_s(:db) %>
+  
+same_uu_second:
+  event_type: c
+  ad_ident: foo42bar
+  uniqueuser: uu1
+  user_agent: mozillas
+  ip: 192.166.0.2
+  ad_gen_time: <%= (1.hour.from_now. - 10.seconds).to_s(:db) %>
+  created_at: <%= 1.hours.from_now.to_s(:db) %>
+  updated_at: <%= 1.hours.from_now.to_s(:db) %>

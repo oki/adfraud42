@@ -11,18 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120604174748) do
+ActiveRecord::Schema.define(:version => 20120604184619) do
 
   create_table "advertisements", :force => true do |t|
     t.string   "name",                     :null => false
     t.string   "ident",      :limit => 15, :null => false
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
+    t.string   "targeturl"
   end
 
   create_table "events", :force => true do |t|
     t.string   "event_type",  :limit => 1
-    t.string   "targeturl"
     t.string   "ad_ident",    :limit => 15
     t.string   "uniqueuser",  :limit => 20
     t.string   "user_agent"
