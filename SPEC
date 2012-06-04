@@ -1,0 +1,16 @@
+Problem:
+W reklamie internetowej rozliczanej za kliknięcie pojawia się problem fraudu.
+Poniważ wydawcy dostają wynagrodzenie za kliknięcia to starają się na różne sposoby
+wygenerować jak największą liczbę kliknięć w reklamy na swoich serwisach. 
+Naszym zadaniem jest wykrywanie takich prób. 
+
+Zadanie: Zbieranie clicków i click fraud.
+Należy zbierać informacje o kliknięciach w reklamy na serwisach
+w tym informacje informacje kiedy i gdzie (url) i którą reklamę kliknięto,
+informacje o przeglądarce użytkownika itp.
+
+Dodatkowo napisz prosty analizator kliknięć pod kątem klik fraud (podejrzane sztuczne, nabijane kliknięcia).
+Uznajmy, że kliknięcia fraudowe to takie, które:
+- mają powtórzony adres IP w ciągu 24h
+- mają powtórzony ID usera (unikalne cookie per browser) w ciągu 24h
+- czas kliknięcia od momentu załadowania reklamy jest mniejszy niż X sekund

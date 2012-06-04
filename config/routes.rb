@@ -1,4 +1,6 @@
 Adfraud42::Application.routes.draw do
+  get "advertisements/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -8,6 +10,8 @@ Adfraud42::Application.routes.draw do
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+  match 'redirect/:ident' => 'advertisements#show'
+  
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
