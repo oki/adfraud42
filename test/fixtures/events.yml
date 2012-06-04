@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  event_type: MyString
+  targeturl: MyString
+  ad_ident: MyString
+  uniqueuser: MyString
+  user_agent: MyString
+  ip: MyString
+  ad_gen_time: 2012-06-04 19:47:48
+
+two:
+  event_type: MyString
+  targeturl: MyString
+  ad_ident: MyString
+  uniqueuser: MyString
+  user_agent: MyString
+  ip: MyString
+  ad_gen_time: 2012-06-04 19:47:48
