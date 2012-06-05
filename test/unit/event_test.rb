@@ -1,5 +1,7 @@
 require 'test_helper'
-require 'pp'
+
+
+# fixtures load from fixtures/events.yml
 
 class EventTest < ActiveSupport::TestCase
   
